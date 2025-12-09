@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mPeli"
+        android:icon="@drawable/icons_peliculados"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/mLike"
+        android:icon="@drawable/icons_me_gustados"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/mAnhadir"
+        android:icon="@drawable/icons_anhadir_imagen"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/mColumn"
+        android:icon="@drawable/icons1"
+        android:title="Item"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/mFav"
+        android:icon="@drawable/icons_corazon_roto"
+        android:title="Item"
+        app:showAsAction="always" />
+</menu>

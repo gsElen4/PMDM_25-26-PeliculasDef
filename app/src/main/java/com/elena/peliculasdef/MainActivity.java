@@ -8,10 +8,12 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -333,8 +335,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    // Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu, menu);
+        return true;
+    }
 /*
     public void columnas(MenuItem opc){
-        if(opc.getItemId() = R)
-    }*/
+        if(opc.getItemId() = );
+    }
+*/
+    //Opciones del menu
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.mPeli){
+            startActivity(new Intent(MainActivity.this,MainInfoPeli.class ));
+        }
+        return false;
+    }
 }
