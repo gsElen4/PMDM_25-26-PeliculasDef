@@ -20,6 +20,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -290,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("MissingInflatedId")
+    GridLayoutManager gridLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -309,9 +311,10 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView rv = findViewById(R.id.rv);
         rv.setAdapter(adaptador);
 
-        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
-        rv.setLayoutManager(staggeredGridLayoutManager);
-        rv.addItemDecoration(new DividerItemDecoration(this, staggeredGridLayoutManager.getOrientation()));
+
+      gridLayoutManager = new GridLayoutManager(this, 1);
+        rv.setLayoutManager(gridLayoutManager);
+        rv.addItemDecoration(new DividerItemDecoration(this, gridLayoutManager.getOrientation()));
 
         //action bar
         ActionBar actionBar = getSupportActionBar();
@@ -343,16 +346,23 @@ public class MainActivity extends AppCompatActivity {
         menuInflater.inflate(R.menu.menu, menu);
         return true;
     }
-/*
+
     public void columnas(MenuItem opc){
-        if(opc.getItemId() = );
+            if(gridLayoutManager.getSpanCount() == 1) {
+                gridLayoutManager.setSpanCount(2);
+                opc.setIcon(R.drawable.icons2);
+                } else{
+                    gridLayoutManager.setSpanCount(1);
+                    opc.setIcon(R.drawable.icons1);
+            }
     }
-*/
+
     //Opciones del menu
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         int id = item.getItemId();
         if(id == R.id.mPeli){
-            startActivity(new Intent(MainActivity.this,MainInfoPeli.class ));
+            Intent intent=new Intent(MainActivity.this, MainInfoPeli.class);
+            startActivity(intent);
         }
         return false;
     }

@@ -20,6 +20,7 @@
     <item
         android:id="@+id/mColumn"
         android:icon="@drawable/icons1"
+        android:onClick="columnas"
         android:title="Item"
         app:showAsAction="always" />
     <item
